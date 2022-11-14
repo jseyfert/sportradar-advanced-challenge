@@ -1,5 +1,6 @@
 const { Op } = require("sequelize");
 const models = require("./models/index");
+const script = require("./script");
 
 const express = require("express");
 const app = express();
