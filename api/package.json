@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "setup": "npx sequelize-cli db:migrate",
     "start": "node ./index.js"
   },
   "author": "",
