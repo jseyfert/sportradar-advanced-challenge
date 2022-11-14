@@ -2,7 +2,9 @@ const axios = require("axios");
 const models = require("./models/index");
 
 function buildPlayer(player, id, response) {
-  const isHomeTeam = response.data.gameData.teams.home === player.currentTeam;
+  const isHomeTeam =
+    response.data.gameData.teams.home.id === player.currentTeam.id;
+
   const playerStats = isHomeTeam
     ? response.data.liveData.boxscore.teams.home.players[id]?.stats?.skaterStats
     : response.data.liveData.boxscore.teams.away.players[id]?.stats
@@ -17,8 +19,8 @@ function buildPlayer(player, id, response) {
     playerNumber: player.primaryNumber,
     playerPosition: player.primaryPosition.name,
     opponnetTeam: isHomeTeam
-      ? response.data.gameData.teams.home.name
-      : response.data.gameData.teams.away.name,
+      ? response.data.gameData.teams.away.name
+      : response.data.gameData.teams.home.name,
     assists: playerStats?.assists,
     goals: playerStats?.goals,
     hits: playerStats?.hits,
