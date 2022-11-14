@@ -1,14 +1,8 @@
 # sportradar-advanced-challenge
 
-To start the project:
+To setup and start the front and backend of the project, run the following commands from the root of the project:
+(This is set up as a mono repo via lerna)
 
-Start API server
-
-1. npm i --prefix api
-2. npm run setup --prefix api
-3. npm start --prefix api
-
-Start Web server
-
-1. npm i --prefix web
-2. npm start --prefix web
+1. run `npm i` to install packages
+2. run `npm run setup` to setup DB
+3. run `npm start` to setup DB

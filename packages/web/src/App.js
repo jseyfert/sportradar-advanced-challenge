@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -27,7 +26,9 @@ function App() {
     <div>
       <h1>NHL players</h1>
 
-      <label for="fname">Server side search</label>
+      <label for="fname">
+        Search (playerId, playerName, teamId, teamName):{" "}
+      </label>
       <input
         type="text"
         id="fname"
@@ -37,6 +38,8 @@ function App() {
       />
 
       <br />
+      <br />
+      <div>Count: {players.length}</div>
       <br />
 
       <table id="customers">
@@ -54,8 +57,10 @@ function App() {
           <th>points</th>
           <th>penaltyMinutes</th>
           <th>opponnetTeam</th>
+          <th>createdAt</th>
         </tr>
         {players.map((p) => {
+          console.log("🚀 ~ here ~ p", p);
           return (
             <tr>
               <td>{p.playerId}</td>
@@ -71,6 +76,7 @@ function App() {
               <td>{p.points}</td>
               <td>{p.penaltyMinutes}</td>
               <td>{p.opponnetTeam}</td>
+              <td>{p.createdAt}</td>
             </tr>
           );
         })}

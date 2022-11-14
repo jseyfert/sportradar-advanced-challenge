@@ -1,0 +1,14 @@
+{
+  "name": "sportradar-advanced-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "setup": "lerna run --stream setup",
+    "start": "lerna run --stream start"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "lerna": "^6.0.3"
+  }
+}
