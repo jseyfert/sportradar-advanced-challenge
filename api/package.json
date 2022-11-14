@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node ./index.js"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "sequelize-cli": "^6.5.2"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "sequelize": "^6.25.5",
     "sqlite3": "^5.1.2"
   }
