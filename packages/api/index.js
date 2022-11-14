@@ -1,6 +1,6 @@
+const { getLiveGames } = require("./script");
 const { Op } = require("sequelize");
 const models = require("./models/index");
-const script = require("./script");
 
 const express = require("express");
 const app = express();
@@ -37,3 +37,4 @@ app.get("/players", function (req, res) {
 });
 
 app.listen(port, () => console.log(`app listening on port ${port}!`));
+setInterval(getLiveGames, 10000);
