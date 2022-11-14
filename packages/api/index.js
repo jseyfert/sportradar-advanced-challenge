@@ -1,4 +1,4 @@
-const { getLiveGames } = require("./script");
+const { extractLiveGames } = require("./script");
 const { Op } = require("sequelize");
 const models = require("./models/index");
 
@@ -6,6 +6,7 @@ const express = require("express");
 const app = express();
 const port = 4000;
 
+// TODO: move to route folder
 app.get("/players", function (req, res) {
   const search = req.query.search ? `%${req.query.search}%` : "%%";
   models.Player.findAll({
@@ -37,4 +38,4 @@ app.get("/players", function (req, res) {
 });
 
 app.listen(port, () => console.log(`app listening on port ${port}!`));
-setInterval(getLiveGames, 10000);
+setInterval(extractLiveGames, 10000);

@@ -6,8 +6,7 @@ function App() {
   const [players, setPlayers] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  function handleSearchChange(even) {
-    console.log(even.target.value);
+  function handleChangeSearch(even) {
     setSearchText(even.target.value);
   }
 
@@ -34,7 +33,7 @@ function App() {
         id="fname"
         name="fname"
         value={searchText}
-        onChange={handleSearchChange}
+        onChange={handleChangeSearch}
       />
 
       <br />
@@ -60,7 +59,6 @@ function App() {
           <th>createdAt</th>
         </tr>
         {players.map((p) => {
-          console.log("🚀 ~ here ~ p", p);
           return (
             <tr>
               <td>{p.playerId}</td>

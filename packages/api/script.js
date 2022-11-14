@@ -30,7 +30,7 @@ function buildPlayer(player, id, response) {
 }
 
 // TODO: change to a queue
-async function getLiveGames() {
+async function extractLiveGames() {
   try {
     const todaysGames = await axios.get(
       "https://statsapi.web.nhl.com/api/v1/schedule"
@@ -56,4 +56,4 @@ async function getLiveGames() {
   }
 }
 
-module.exports = { getLiveGames };
+module.exports = { extractLiveGames };
